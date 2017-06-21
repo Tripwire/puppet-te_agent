@@ -1,0 +1,8 @@
+Gemfile.lock
+.yardoc/
+doc/
+pkg/
+log/
+.bundle/
+vendor/
+.vagrant/
