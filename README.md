@@ -89,6 +89,8 @@ class { 'te_agent':
 
 ## Reference
 
+Available at https://tripwire.github.io/puppet-te_agent/
+
 The full reference documentation can be generated with Puppet Strings:
 
 ```
