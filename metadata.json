@@ -1,0 +1,30 @@
+{
+  "name": "tripwire-te_agent",
+  "version": "0.2.0",
+  "author": "Tripwire, Inc.",
+  "summary": "The te_agent module installs, configures, and manages the services of the Tripwire Enterprise Agent",
+  "license": "Apache-2.0",
+  "source": "https://github.com/Tripwire/puppet-te_agent",
+  "project_page": "https://github.com/Tripwire/puppet-te_agent",
+  "issues_url": "https://github.com/Tripwire/puppet-te_agent/issues",
+  "tags": ["tripwire", "tripwire-enterprise", "security", "agent", "monitoring" ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat"
+    },
+    {
+      "operatingsystem": "CentOS"
+    },
+    {
+      "operatingsystem": "Windows"
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 4.9.0 < 5.0.0"
+    }
+  ],
+  "dependencies": [],
+  "data_provider": null
+}

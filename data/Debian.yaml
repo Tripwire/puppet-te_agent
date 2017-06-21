@@ -1,0 +1,3 @@
+---
+# Debian init scripts actually seem to work
+te_agent::service_enable: true

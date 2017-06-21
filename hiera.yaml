@@ -1,0 +1,8 @@
+---
+version: 5
+hierarchy:
+  - name: "Per-OS defaults"
+    path: "%{facts.os.family}.yaml"
+
+  - name: "Common data"
+    path: "common.yaml"

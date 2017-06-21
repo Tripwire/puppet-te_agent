@@ -1,0 +1,30 @@
+---
+te_agent::package_manage: true
+te_agent::package_ensure: installed
+te_agent::package_install_path: '/usr/local/tripwire/te/agent'
+te_agent::package_name: 'te_agent'
+te_agent::package_provider: te_agent_bin
+te_agent::te_server_host: ''
+te_agent::te_services_port: 9898
+te_agent::te_services_passphrase: ''
+te_agent::te_server_http_port: 8080
+te_agent::local_port: 9898
+te_agent::install_rtm: true
+te_agent::proxy_host: ~
+te_agent::proxy_port: 1080
+te_agent::rtm_port: 1169
+te_agent::enable_fips: false
+te_agent::agent_properties: ~
+te_agent::tags: ~
+te_agent::service_manage: true
+te_agent::service_ensure: running
+# twdaemon does not support chkconfig
+te_agent::service_enable: ~
+te_agent::service_name: twdaemon
+te_agent::service_provider: ~
+# only makes sense if install_rtm = true
+te_agent::service_rtm_manage: true
+te_agent::service_rtm_ensure: running
+te_agent::service_rtm_enable: true
+te_agent::service_rtm_name: twrtmd
+te_agent::service_rtm_provider: ~

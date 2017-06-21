@@ -1,0 +1,17 @@
+/tmp/te_agent.bin --silent --eula accept <%# -%>
+ --server-host <%= $te_agent::te_server_host -%>
+ --server-port <%= $te_agent::te_services_port -%>
+ --passphrase  <%= $te_agent::te_services_passphrase -%>
+ --install-rtm <%= $te_agent::install_rtm -%>
+ --install-dir <%= $te_agent::package_install_path -%>
+<% if $te_agent::proxy_host { -%>
+ --proxy-host <%= $te_agent::proxy_host -%>
+ --proxy-port <%= $te_agent::proxy_port -%>
+<% } -%>
+<% if $te_agent::install_rtm { -%>
+ --rtmport <%= $te_agent::rtm_port -%>
+<% } -%>
+<% if $te_agent::enable_fips { -%>
+ --enable-fips <%# -%>
+ --http-port <%= $te_agent::te_server_http_port -%>
+<% } -%>
