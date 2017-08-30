@@ -40,9 +40,15 @@ describe 'te_agent install' do
   end
 
   # Agent service installed and running
-  describe service(service_name) do
+  describe service(service_name), :if => os[:family] != 'redhat' do
     it { should be_enabled }
     it { should be_running }
+  end
+
+  # service resource doesn't work correctly on redhat. check process instead.
+  describe process('java'), :if => os[:family] == 'redhat' do
+    it { should be_running }
+    its(:args) { should match /-Dtw\.server=false/ }
   end
 
   # EG service should be installed and running

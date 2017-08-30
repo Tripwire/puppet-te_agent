@@ -1,0 +1,5 @@
+---
+# twdaemon does not support chkconfig
+te_agent::service_enable: ~
+# systemctl cannot correctly determine service status
+te_agent::service_provider: redhat
