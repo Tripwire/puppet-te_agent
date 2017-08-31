@@ -1,13 +1,16 @@
 ## Release 0.2.1
+### Summary
 
 Bugfix release.
+
+#### Bugs fixed
 
 - Resolves issue #1 - service not starting correctly after upgrade
 
 ## Initial Public Release 0.2.0
 ### Summary
 
-The first version released on GitHub and Puppet Forge
+The first version released on GitHub and Puppet Forge.
 
 
 ## Private Beta Release 0.1.0
