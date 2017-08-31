@@ -1,6 +1,6 @@
 {
   "name": "tripwire-te_agent",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "Tripwire, Inc.",
   "summary": "The te_agent module installs, configures, and manages the services of the Tripwire Enterprise Agent",
   "license": "Apache-2.0",
