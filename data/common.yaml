@@ -18,8 +18,7 @@ te_agent::agent_properties: ~
 te_agent::tags: ~
 te_agent::service_manage: true
 te_agent::service_ensure: running
-# twdaemon does not support chkconfig
-te_agent::service_enable: ~
+te_agent::service_enable: true
 te_agent::service_name: twdaemon
 te_agent::service_provider: ~
 # only makes sense if install_rtm = true

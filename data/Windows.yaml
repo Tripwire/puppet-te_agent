@@ -2,6 +2,5 @@
 te_agent::package_install_path: 'C:\Program Files\Tripwire\TE\Agent'
 te_agent::package_name: 'Tripwire Enterprise Agent'
 te_agent::package_provider: windows
-te_agent::service_enable: true
 te_agent::service_name: teagent
 te_agent::service_rtm_name: tesvc
