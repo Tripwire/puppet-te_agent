@@ -1,3 +1,9 @@
+## Release 0.2.1
+
+Bugfix release.
+
+- Resolves issue #1 - service not starting correctly after upgrade
+
 ## Initial Public Release 0.2.0
 ### Summary
 
