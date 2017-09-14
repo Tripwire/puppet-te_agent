@@ -1,6 +1,6 @@
 require 'puppet/provider/package'
 
-Puppet::Type.type(:package).provide(:te_agent_bin, :parent => Puppet::Provider::Package) do
+Puppet::Type.type(:package).provide(:dpkg, :parent => Puppet::Provider::Package) do
   desc "Support for managing the TE Agent package on non-Windows systems.
 
   This provider requires a `source` attribute when installing the package,
