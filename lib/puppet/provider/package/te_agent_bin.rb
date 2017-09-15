@@ -14,16 +14,41 @@ Puppet::Type.type(:package).provide(:te_agent_bin, :parent => Puppet::Provider::
   has_feature :versionable
   has_feature :install_options
 
+  confine :osfamily => [ :RedHat ]
+  confine :exists   => "/etc/init.d/twdaemon"
+
   def self.prefetch(packages)
     packages.each do |name, pkg|
       version = get_version(pkg)
-      pkg.provider = new({:ensure => version, :name => name, :provider => :te_agent_bin}) if version
+      pkg.provider = new({:name => name, :ensure => version, :provider => :te_agent_bin}) if version
     end
   end
 
+  def self.instances
+    paths = []
+    versions = []
+    File.open('/etc/init.d/twdaemon').each_line do |r|
+      next if r.match(/^#/)
+      pathn = r.sub(/bin.*/, 'data/version')
+      npath = pathn.rstrip!
+      paths.push(npath)
+    end
+    paths.each do |path|
+      vfile = File.open("#{path}")
+      vfile.each_line do |v|
+        versionr = /\d.\d.\d/.match(v).to_s
+        versions.push(versionr)
+      end
+    end
+    versions.each.collect do |version|
+      new(:name => 'te_agent', :ensure => version, :provider => :te_agent_bin)
+    end
+  end
+
+
   def query
     version = get_version
-    version ? {:ensure => version, :name => resource[:name], :provider => :te_agent_bin} : nil
+    version ? {:name => resource[:name], :ensure => version, :provider => :te_agent_bin} : nil
   end
 
   def install
@@ -82,7 +107,6 @@ Puppet::Type.type(:package).provide(:te_agent_bin, :parent => Puppet::Provider::
 
   def join_options(options)
     return unless options
-
     options.collect do |val|
       case val
         when Hash
