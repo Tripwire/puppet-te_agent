@@ -14,9 +14,6 @@ Puppet::Type.type(:package).provide(:te_agent_bin, :parent => Puppet::Provider::
   has_feature :versionable
   has_feature :install_options
 
-  confine :osfamily => [ :RedHat ]
-  confine :exists   => "/etc/init.d/twdaemon"
-
   def self.prefetch(packages)
     packages.each do |name, pkg|
       version = get_version(pkg)
@@ -44,7 +41,6 @@ Puppet::Type.type(:package).provide(:te_agent_bin, :parent => Puppet::Provider::
       new(:name => 'te_agent', :ensure => version, :provider => :te_agent_bin)
     end
   end
-
 
   def query
     version = get_version
