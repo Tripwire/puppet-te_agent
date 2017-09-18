@@ -21,6 +21,10 @@ Puppet::Type.type(:package).provide(:te_agent_bin, :parent => Puppet::Provider::
     end
   end
 
+  def self.instances
+    []
+  end
+
   def query
     version = get_version
     version ? {:ensure => version, :name => resource[:name], :provider => :te_agent_bin} : nil
