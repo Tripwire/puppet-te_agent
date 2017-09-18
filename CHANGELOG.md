@@ -1,3 +1,12 @@
+## Release 0.2.2
+### Summary
+
+Bugfix release.
+
+#### Bugs fixed
+
+- Resolves issue #4 - "puppet resource package" command broken when te_agent module is installed
+
 ## Release 0.2.1
 ### Summary
 
